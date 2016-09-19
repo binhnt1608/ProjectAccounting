@@ -1,0 +1,92 @@
+@model FinalProject.Models.Customer
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>Customer</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input type="hidden" asp-for="CustomerID" />
+        <div class="form-group">
+            <label asp-for="CustomerAddress1" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerAddress1" class="form-control" />
+                <span asp-validation-for="CustomerAddress1" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerAddress2" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerAddress2" class="form-control" />
+                <span asp-validation-for="CustomerAddress2" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerCity" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerCity" class="form-control" />
+                <span asp-validation-for="CustomerCity" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerCreditLimit" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerCreditLimit" class="form-control" />
+                <span asp-validation-for="CustomerCreditLimit" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerName" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerPrimaryContact" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerPrimaryContact" class="form-control" />
+                <span asp-validation-for="CustomerPrimaryContact" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerState" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerState" class="form-control" />
+                <span asp-validation-for="CustomerState" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerTelephone" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerTelephone" class="form-control" />
+                <span asp-validation-for="CustomerTelephone" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CustomerZipcode" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CustomerZipcode" class="form-control" />
+                <span asp-validation-for="CustomerZipcode" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

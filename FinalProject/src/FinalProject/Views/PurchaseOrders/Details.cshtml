@@ -1,0 +1,36 @@
+@model FinalProject.Models.PurchaseOrder
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PurchaseOrder</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpectedDeliveryDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ExpectedDeliveryDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseOrderAmount)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseOrderAmount)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.PurchaseOrderDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PurchaseOrderDate)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PurchaseOrderID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

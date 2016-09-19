@@ -1,0 +1,53 @@
+@model FinalProject.Models.CashDisbursement
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<form asp-action="Create">
+    <div class="form-horizontal">
+        <h4>CashDisbursement</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="CashAccountID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="CashAccountID" class ="form-control" asp-items="ViewBag.CashAccountID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="CashDisbursementDate" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="CashDisbursementDate" class="form-control" />
+                <span asp-validation-for="CashDisbursementDate" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="EmployeeID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="EmployeeID" class ="form-control" asp-items="ViewBag.EmployeeID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="VendorID" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="VendorID" class ="form-control" asp-items="ViewBag.VendorID"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
