@@ -12,6 +12,7 @@ namespace FinalProject.Models
         public Inventory ()
         {
             InflowPurchaseInventorys = new HashSet<InflowPurchaseInventory>();
+            ReservationPurchaseOrderInventorys = new HashSet<ReservationPurchaseOrderInventory>();
         }
 
         [Required]
@@ -44,7 +45,10 @@ namespace FinalProject.Models
 
         public InventoryDiameter InventoryDiameter { get; set; }
 
-        //// Inventory  1-m Reservation PO-I
+        //// Inventory  1-m Inflow P-I //ngay chỗ này Bình ghi nhầm qua của phần đ nha.
         public virtual ICollection<InflowPurchaseInventory> InflowPurchaseInventorys { get; set; }
+
+        // Inventory 1-m Reservation PO-I
+        public virtual ICollection<ReservationPurchaseOrderInventory> ReservationPurchaseOrderInventorys { get; set; }
     }
 }

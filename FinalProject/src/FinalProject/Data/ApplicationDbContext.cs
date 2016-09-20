@@ -30,6 +30,15 @@ namespace FinalProject.Data
                 entity.ToTable("InflowPurchaseInventorys");
             }
             );
+
+            builder.Entity<ReservationPurchaseOrderInventory>(entity =>
+            {
+                entity.HasKey(e => new { e.PurchaseOrderID, e.InventoryID });
+                entity.HasOne(d => d.PurchaseOrder).WithMany(p => p.ReservationPurchaseOrderInventorys).HasForeignKey(d => d.PurchaseOrderID);
+                entity.HasOne(d => d.Inventory).WithMany(p => p.ReservationPurchaseOrderInventorys).HasForeignKey(d => d.InventoryID);
+                entity.ToTable("ReservationPurchaseOrderInventorys");
+            }
+            );
         }
 
         public DbSet<CashAccount> CashAccount { get; set; }
@@ -55,5 +64,9 @@ namespace FinalProject.Data
         public DbSet<InflowPurchaseInventory> InflowPurchaseInventory { get; set; }
 
         public DbSet<PurchaseOrder> PurchaseOrder { get; set; }
+
+        public DbSet<ReservationPurchaseOrderInventory> ReservationPurchaseOrderInventory { get; set; }
+
+
     }
 }

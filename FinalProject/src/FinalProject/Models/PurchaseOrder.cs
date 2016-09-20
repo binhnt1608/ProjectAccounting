@@ -8,6 +8,10 @@ namespace FinalProject.Models
 {
     public class PurchaseOrder
     {
+        public PurchaseOrder()
+        {
+            ReservationPurchaseOrderInventorys = new HashSet<ReservationPurchaseOrderInventory>();
+        }
         [Display(Name = "Purchase Order #")]
         public int PurchaseOrderID { get; set; }
 
@@ -40,7 +44,8 @@ namespace FinalProject.Models
 
         //Purchase 1-m
         public virtual ICollection<Purchase> Purchase { get; set; }
-        // PO 1-m Reservation PO-I
-        //public virtual ICollection<ReservationPurchaseOrderInventory> ReservationPurchaseOrderInventorys { get; set; }
+
+        // 1-m Reservation PO-I
+        public virtual ICollection<ReservationPurchaseOrderInventory> ReservationPurchaseOrderInventorys { get; set; }
     }
 }
