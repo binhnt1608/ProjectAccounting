@@ -22,7 +22,7 @@ namespace FinalProject.Models
                     new CashAccount
                     {
                         AccountDescription = "ACB Bank",
-                        BankName = "ThinhLe",
+                        BankName = "ThinhNu",
                         BankAccountNumber = "051.100.389.1938"
                     },
 
@@ -52,6 +52,13 @@ namespace FinalProject.Models
                         AccountDescription = "Dong A Bank",
                         BankName = "NgocQuy",
                         BankAccountNumber = "751.120.389.351"
+                    },
+
+                    new CashAccount
+                    {
+                        AccountDescription = "Vietcombank",
+                        BankName = "SonTungMTP",
+                        BankAccountNumber = "121.120.389.113"
                     }
                 );
                 context.SaveChanges();
