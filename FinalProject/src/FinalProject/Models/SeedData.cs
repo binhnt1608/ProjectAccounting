@@ -13,7 +13,6 @@ namespace FinalProject.Models
             using (var context = new ApplicationDbContext(
                 serviceProvider.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {
-                // Look for any movies.
                 if (context.CashAccount.Any())
                 {
                     return;   // DB has been seeded
