@@ -92,6 +92,7 @@ namespace FinalProject
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+            MvcMovie.Models.SeedData.Initialize(app.ApplicationServices);
         }
     }
 }
