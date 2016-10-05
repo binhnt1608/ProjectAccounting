@@ -27,6 +27,11 @@ namespace FinalProject.Models
         [Display(Name = "Cash Account #")]
         public int CashAccountID { get; set; }
 
+        [Display(Name = "Time Card #")]
+        public int TimeCardID { get; set; }
+
+        
+
         //purchase cashaccount employee vendor m-1
         public virtual Purchase Purchase { get; set; }
         public virtual CashAccount CashAccount { get; set; }
