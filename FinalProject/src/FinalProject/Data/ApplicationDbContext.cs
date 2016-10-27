@@ -39,6 +39,33 @@ namespace FinalProject.Data
                 entity.ToTable("ReservationPurchaseOrderInventorys");
             }
             );
+
+            builder.Entity<ReservationWSLT>(entity =>
+            {
+                entity.HasKey(e => new { e.LaborTypeID, e.ScheduleID });
+                entity.HasOne(d => d.LaborType).WithMany(p => p.ReservationWSLTs).HasForeignKey(d => d.LaborTypeID);
+                entity.HasOne(d => d.WorkSchedule).WithMany(p => p.ReservationWSLTs).HasForeignKey(d => d.ScheduleID);
+                entity.ToTable("ReservationPurchaseOrderInventorys");
+            }
+            );
+
+            builder.Entity<InflowLALT>(entity =>
+            {
+                entity.HasKey(e => new { e.TimeCardID, e.LaborTypeID });
+                entity.HasOne(d => d.LaborAcquisition).WithMany(p => p.InflowLALTs).HasForeignKey(d => d.TimeCardID);
+                entity.HasOne(d => d.LaborType).WithMany(p => p.InflowLALTs).HasForeignKey(d => d.LaborTypeID);
+                entity.ToTable("ReservationPurchaseOrderInventorys");
+            }
+            );
+
+            builder.Entity<FulfillmentWSLA>(entity =>
+            {
+                entity.HasKey(e => new { e.ScheduleID, e.TimeCardID });
+                entity.HasOne(d => d.WorkSchedule).WithMany(p => p.FulfillmentWSLAs).HasForeignKey(d => d.ScheduleID);
+                entity.HasOne(d => d.LaborAcquisition).WithMany(p => p.FulfillmentWSLAs).HasForeignKey(d => d.TimeCardID);
+                entity.ToTable("ReservationPurchaseOrderInventorys");
+            }
+            );
         }
 
         public DbSet<CashAccount> CashAccount { get; set; }

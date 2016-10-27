@@ -8,6 +8,11 @@ namespace FinalProject.Models
 {
     public class LaborAcquisition
     {
+        public LaborAcquisition()
+        {
+            InflowLALTs = new HashSet<InflowLALT>();
+            FulfillmentWSLAs = new HashSet<FulfillmentWSLA>();
+        }
         [Display(Name ="Time Card #")]
         public int TimeCardID { get; set; }
 
@@ -42,7 +47,12 @@ namespace FinalProject.Models
         public virtual Employee Employee { get; set; }
 
         public virtual Employee_1 Employee1 { get; set; }
-        
+
+        //1-m
+        public virtual ICollection<InflowLALT> InflowLALTs { get; set; }
+
+        public virtual ICollection<FulfillmentWSLA> FulfillmentWSLAs { get; set; }
+
     }
 
 }
