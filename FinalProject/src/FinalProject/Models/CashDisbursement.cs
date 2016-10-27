@@ -12,30 +12,47 @@ namespace FinalProject.Models
         [Display(Name = "Check Number #")]
         public int CheckNumber { get; set; }
 
+        [Display(Name = "Cash Account #")]
+        public int CashAccountID { get; set; }
+
+        [Display(Name = "CD Type #")]
+        public int CDTypeID { get; set; }
+
+        //VendorID
+        [Display(Name = "Payee #")]
+        public int PayeeID { get; set; }
+        /*[Display(Name = "Vendor #")]
+        public int VendorID { get; set; }*/
+
+        [Display(Name = "Employee #")]
+        public int EmployeeID { get; set; }
+
+        //Labor Acquisition
+        [Display(Name = "Time Card #")]
+        public int TimeCardID { get; set; }
+
+        //InventoryREceiptID
+        [Display(Name = "Event #")]
+        public int EventID { get; set; }
+
+        //cashdebursement amount
+        [Display(Name = "Amount Paid")]
+        public int CashDisbursementAmount { get; set; }
+
         [Required]
         [Display(Name = "Date")]
         [DataType(DataType.Date, ErrorMessage = "Date Time is invalid")]
         [DisplayFormat(DataFormatString = "{dd-MM-yyyy:0}", ApplyFormatInEditMode = true)]
         public DateTime CashDisbursementDate { get; set; }
 
-        [Display(Name = "Employee #")]
-        public int EmployeeID { get; set; }
-
-        [Display(Name = "Vendor #")]
-        public int VendorID { get; set; }
-
-        [Display(Name = "Cash Account #")]
-        public int CashAccountID { get; set; }
-
-        [Display(Name = "Time Card #")]
-        public int TimeCardID { get; set; }
-
-        
-
         //purchase cashaccount employee vendor m-1
         public virtual Purchase Purchase { get; set; }
         public virtual CashAccount CashAccount { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Vendor Vendor { get; set; }
+        public virtual CashDisbursementType CashDisbursementType { get; set; }
+        public virtual LaborAcquisition LaborAcquisition { get; set; }
+        //employee_1 1-1
+        public virtual Employee_1 Employee1 { get; set; }
     }
 }
