@@ -27,5 +27,6 @@ namespace FinalProject.Models
 
 
         public virtual ICollection<CashDisbursement> CashDisbursement { get; set; }
+        public virtual ICollection<CashReceipt> CashReceipt { get; set; }
     }
 }

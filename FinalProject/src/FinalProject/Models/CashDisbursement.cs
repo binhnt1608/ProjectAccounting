@@ -52,7 +52,9 @@ namespace FinalProject.Models
         public virtual Vendor Vendor { get; set; }
         public virtual CashDisbursementType CashDisbursementType { get; set; }
         public virtual LaborAcquisition LaborAcquisition { get; set; }
-        //employee_1 1-1
+        //employee_1 FulfillmentLACD FulfillmentSSCD 1-1
         public virtual Employee_1 Employee1 { get; set; }
+        public virtual FulfillmentLACD FulfillmentLACD { get; set; }
+        public virtual FulfillmentLACD FulfillmentSSCD { get; set; }
     }
 }

@@ -43,5 +43,8 @@ namespace FinalProject.Models
 
         [Display(Name = "Primary Contact")]
         public string CustomerPrimaryContact { get; set; }
+
+        //1-m cashreceipt
+        public virtual ICollection<CashReceipt> CashReceipt { get; set; }
     }
 }

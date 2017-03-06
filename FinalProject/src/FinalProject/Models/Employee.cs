@@ -85,11 +85,14 @@ namespace FinalProject.Models
         public virtual EmployeeType EmployeeType { get; set; }
         public virtual Exemptions Exemptions { get; set; }
 
-        //1-m purchase purchaseorder laboracquisition cashdisbursement 
+        //1-m purchase purchaseorder laboracquisition cashdisbursement LoanAgreement cashreceipt StockSubscription
         public virtual ICollection<Purchase> Purchase { get; set; }
         public virtual ICollection<PurchaseOrder> PurchaseOrder { get; set; }
         public virtual ICollection<LaborAcquisition> LaborAcquisition { get; set; }
         public virtual ICollection<CashDisbursement> CashDisbursement { get; set; }
+        public virtual ICollection<LoanAgreement> LoanAgreemnet { get; set; }
+        public virtual ICollection<CashReceipt> CashReceipt { get; set; }
+        public virtual ICollection<StockSubscription> StockSubscription { get; set; }
         //m-m withholding
     }
 }

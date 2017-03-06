@@ -20,6 +20,8 @@ namespace FinalProject.Models
         public virtual List<Employee> Employee { get; set; }
 
         // public SaleOrder SaleOrder { get; set; }
+        //1-m cashreceipt
+        public virtual ICollection<CashReceipt> CashReceipt { get; set; }
 
     }
 }
