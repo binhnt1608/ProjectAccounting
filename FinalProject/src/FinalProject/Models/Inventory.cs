@@ -38,14 +38,14 @@ namespace FinalProject.Models
         [Display(Name = "List Price")]
         public string InventoryListPrice { get; set; }
 
-
+        //m-1 composition type diameter
         public InventoryComposition InventoryComposition { get; set; }
 
         public InventoryType InventoryType { get; set; }
 
         public InventoryDiameter InventoryDiameter { get; set; }
 
-        //// Inventory  1-m Inflow P-I //ngay chỗ này Bình ghi nhầm qua của phần đ nha.
+        //// Inventory  1-m Inflow P-I
         public virtual ICollection<InflowPurchaseInventory> InflowPurchaseInventorys { get; set; }
 
         // Inventory 1-m Reservation PO-I

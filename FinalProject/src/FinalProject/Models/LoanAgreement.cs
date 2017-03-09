@@ -21,10 +21,12 @@ namespace FinalProject.Models
 
         [Required]
         [Display(Name = "Loan Amount")]
+        [DisplayFormat(DataFormatString = "{0:$#.##}")]
         public int LoanAmount { get; set; }
 
         [Required]
         [Display(Name = "Interest Rate")]
+        [DisplayFormat(DataFormatString = "{0:#.####%}")]
         public string InterestRate { get; set; }
 
         [Required]
@@ -41,6 +43,7 @@ namespace FinalProject.Models
 
         [Required]
         [Display(Name = "Pmts Per Year")]
+        [DisplayFormat(DataFormatString = "{0:0}")]
         public int PaymentsPerYear { get; set; }
 
         //m-1 Employee StockHolderCreditor

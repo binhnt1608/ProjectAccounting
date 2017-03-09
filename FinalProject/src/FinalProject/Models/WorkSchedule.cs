@@ -20,7 +20,7 @@ namespace FinalProject.Models
         [Display(Name = "Work Schedule #")]
         public int ScheduleID { get; set; }
 
-        //1-m
+        //1-m FulfillmentWSLA ReservationWSLT
 
         public virtual ICollection<FulfillmentWSLA> FulfillmentWSLAs { get; set; }
 

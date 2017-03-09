@@ -28,7 +28,7 @@ namespace FinalProject.Models
 
         [Required]
         [Display(Name ="FWT Rate")]
-        [DisplayFormat(DataFormatString = "{0:##.0%}")]
+        [DisplayFormat(DataFormatString = "{0:##.####%}")]
         public string FWTRate { get; set; }
 
         [Required]
@@ -36,5 +36,6 @@ namespace FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:$#.##}")]
         public decimal FWTBracketBaseAmt { get; set; }
 
+        //m-m employee
     }
 }

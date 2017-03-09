@@ -25,7 +25,7 @@ namespace FinalProject.Models
         [StringLength(50, MinimumLength = 1, ErrorMessage = "Bank account number cannot be longer than 50 and at least 1 characters.")]
         public string BankAccountNumber { get; set; }
 
-
+        //1-m cashdisbursement cashreceipt
         public virtual ICollection<CashDisbursement> CashDisbursement { get; set; }
         public virtual ICollection<CashReceipt> CashReceipt { get; set; }
     }

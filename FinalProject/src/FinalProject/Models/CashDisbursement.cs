@@ -45,14 +45,14 @@ namespace FinalProject.Models
         [DisplayFormat(DataFormatString = "{dd-MM-yyyy:0}", ApplyFormatInEditMode = true)]
         public DateTime CashDisbursementDate { get; set; }
 
-        //purchase cashaccount employee vendor m-1
+        // m-1 purchase cashaccount employee vendor
         public virtual Purchase Purchase { get; set; }
         public virtual CashAccount CashAccount { get; set; }
         public virtual Employee Employee { get; set; }
         public virtual Vendor Vendor { get; set; }
         public virtual CashDisbursementType CashDisbursementType { get; set; }
         public virtual LaborAcquisition LaborAcquisition { get; set; }
-        //employee_1 FulfillmentLACD FulfillmentSSCD 1-1
+        //1-1 employee_1 FulfillmentLACD FulfillmentSSCD 
         public virtual Employee_1 Employee1 { get; set; }
         public virtual FulfillmentLACD FulfillmentLACD { get; set; }
         public virtual FulfillmentLACD FulfillmentSSCD { get; set; }

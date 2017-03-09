@@ -29,7 +29,7 @@ namespace FinalProject.Models
         //SSN = socail security number
         [Required]
         [Display(Name = "SSN")]
-        [StringLength(50, MinimumLength = 1, ErrorMessage = "SSN cannot be longer than 50 and at least 1 characters.")]
+        [StringLength(11, MinimumLength = 1, ErrorMessage = "SSN cannot be longer than 11 and at least 1 characters.")]
         public string EmployeeSSN { get; set; }
 
         [Required]
@@ -54,7 +54,7 @@ namespace FinalProject.Models
 
         [Required]
         [Display(Name = "Phone")]
-        [StringLength(11, MinimumLength = 1, ErrorMessage = "Phone cannot be longer than 11 and at least 1 characters.")]
+        [StringLength(11, MinimumLength = 10, ErrorMessage = "Phone cannot be longer than 11 and at least 10 characters.")]
         public string EmTelephone { get; set; }
 
         [Required]

@@ -18,7 +18,7 @@ namespace FinalProject.Models
         [Display(Name = "Labor Type #")]
         public int LaborTypeID { get; set; }
 
-        //1-m
+        //1-m InflowLALT ReservantionWSLT
         public virtual ICollection<InflowLALT> InflowLALTs { get; set; }
         public virtual ICollection<ReservationWSLT> ReservationWSLTs { get; set; }
     }

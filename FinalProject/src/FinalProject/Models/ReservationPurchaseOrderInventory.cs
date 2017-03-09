@@ -9,6 +9,8 @@ namespace FinalProject.Models
     {
         public int PurchaseOrderID { get; set; }
         public int InventoryID { get; set; }
+
+        //m-1 purchaseorder inventory
         public virtual PurchaseOrder PurchaseOrder { get; set; }
         public virtual Inventory Inventory { get; set; }
     }

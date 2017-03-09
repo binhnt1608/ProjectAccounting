@@ -8,12 +8,14 @@ namespace FinalProject.Models
 {
     public class InventoryType
     {
-        public int InventoryTypeID { get; set; }
+        [Display(Name = "Type #")]
+        public int CompositionID { get; set; }
 
         [Display(Name = "Type Code")]
-        public string InventoryTypeCode { get; set; }
+        public int InventoryTypeCode { get; set; }
 
         [Display(Name = "Type Description")]
+        [StringLength(50, MinimumLength = 1, ErrorMessage = "Description cannot be longer than 50 and at least 1 characters.")]
         public string InventoryTypeDescription { get; set; }
     }
 }

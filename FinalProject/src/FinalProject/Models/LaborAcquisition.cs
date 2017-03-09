@@ -13,6 +13,7 @@ namespace FinalProject.Models
             InflowLALTs = new HashSet<InflowLALT>();
             FulfillmentWSLAs = new HashSet<FulfillmentWSLA>();
         }
+
         [Display(Name ="Time Card #")]
         public int TimeCardID { get; set; }
 
@@ -40,15 +41,15 @@ namespace FinalProject.Models
         [Range(0,200, ErrorMessage ="Please enter a number between 0 and 200")]
         public int LAOvertime { get; set; }
 
-        //1-1
+        //1-1 CashDisbursement
         public virtual CashDisbursement CashDisbursement { get; set; }
 
-        //m-1
+        //m-1 employee employee1
         public virtual Employee Employee { get; set; }
 
         public virtual Employee_1 Employee1 { get; set; }
 
-        //1-m
+        //1-m inflowLaLT FulfillmentWSLA
         public virtual ICollection<InflowLALT> InflowLALTs { get; set; }
 
         public virtual ICollection<FulfillmentWSLA> FulfillmentWSLAs { get; set; }

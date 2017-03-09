@@ -11,7 +11,7 @@ namespace FinalProject.Models
 
         // cashdisbursement 1-1
         public virtual CashDisbursement CashDisBursement { get; set; }
-        //labor acquisition
+        //1-m labor acquisition
         public virtual ICollection<LaborAcquisition> LaborAcquisition { get; set; }
     }
 }
