@@ -8,6 +8,7 @@ namespace FinalProject.Models
 {
     public class CashDisbursementType
     {
+        [Key]
         [Display(Name = "CD Type #")]
         public int CDTypeID { get; set; }
 

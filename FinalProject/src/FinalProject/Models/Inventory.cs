@@ -46,11 +46,10 @@ namespace FinalProject.Models
         public InventoryDiameter InventoryDiameter { get; set; }
 
         //// Inventory  1-m Inflow P-I
-<<<<<<< HEAD
+
         public virtual ICollection<InflowPurchaseInventory> InflowPurchaseInventorys { get; set; }
-=======
         public virtual ICollection<InflowPurchaseInventory> InflowPurchaseInventories { get; set; }
->>>>>>> origin/master
+
 
         // Inventory 1-m Reservation PO-I
         public virtual ICollection<ReservationPurchaseOrderInventory> ReservationPurchaseOrderInventories { get; set; }

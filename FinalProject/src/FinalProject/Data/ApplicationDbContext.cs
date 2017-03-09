@@ -77,6 +77,8 @@ namespace FinalProject.Data
             );
         }
 
+        public DbSet<LaborAcquisition> LaborAcquisition { get; set; }
+        public DbSet<LaborType> LaborType { get; set; }
         public DbSet<CashAccount> CashAccount { get; set; }
 
         public DbSet<CashDisbursement> CashDisbursement { get; set; }
