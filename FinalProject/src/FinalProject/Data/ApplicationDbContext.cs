@@ -25,18 +25,18 @@ namespace FinalProject.Data
             builder.Entity<InflowPurchaseInventory>(entity =>
             {
                 entity.HasKey(e => new { e.InventoryID, e.InventoryReceiptID });
-                entity.HasOne(d => d.Inventory).WithMany(p => p.InflowPurchaseInventorys).HasForeignKey(d => d.InventoryID);
-                entity.HasOne(d => d.Purchase).WithMany(p => p.InflowPurchaseInventorys).HasForeignKey(d => d.InventoryReceiptID);
-                entity.ToTable("InflowPurchaseInventorys");
+                entity.HasOne(d => d.Inventory).WithMany(p => p.InflowPurchaseInventories).HasForeignKey(d => d.InventoryID);
+                entity.HasOne(d => d.Purchase).WithMany(p => p.InflowPurchaseInventories).HasForeignKey(d => d.InventoryReceiptID);
+                entity.ToTable("InflowPurchaseInventories");
             }
             );
 
             builder.Entity<ReservationPurchaseOrderInventory>(entity =>
             {
                 entity.HasKey(e => new { e.PurchaseOrderID, e.InventoryID });
-                entity.HasOne(d => d.PurchaseOrder).WithMany(p => p.ReservationPurchaseOrderInventorys).HasForeignKey(d => d.PurchaseOrderID);
-                entity.HasOne(d => d.Inventory).WithMany(p => p.ReservationPurchaseOrderInventorys).HasForeignKey(d => d.InventoryID);
-                entity.ToTable("ReservationPurchaseOrderInventorys");
+                entity.HasOne(d => d.PurchaseOrder).WithMany(p => p.ReservationPurchaseOrderInventories).HasForeignKey(d => d.PurchaseOrderID);
+                entity.HasOne(d => d.Inventory).WithMany(p => p.ReservationPurchaseOrderInventories).HasForeignKey(d => d.InventoryID);
+                entity.ToTable("ReservationPurchaseOrderInventories");
             }
             );
 
@@ -45,7 +45,7 @@ namespace FinalProject.Data
                 entity.HasKey(e => new { e.LaborTypeID, e.ScheduleID });
                 entity.HasOne(d => d.LaborType).WithMany(p => p.ReservationWSLTs).HasForeignKey(d => d.LaborTypeID);
                 entity.HasOne(d => d.WorkSchedule).WithMany(p => p.ReservationWSLTs).HasForeignKey(d => d.ScheduleID);
-                entity.ToTable("ReservationPurchaseOrderInventorys");
+                entity.ToTable("ReservationWSLTs");
             }
             );
 
@@ -54,7 +54,7 @@ namespace FinalProject.Data
                 entity.HasKey(e => new { e.TimeCardID, e.LaborTypeID });
                 entity.HasOne(d => d.LaborAcquisition).WithMany(p => p.InflowLALTs).HasForeignKey(d => d.TimeCardID);
                 entity.HasOne(d => d.LaborType).WithMany(p => p.InflowLALTs).HasForeignKey(d => d.LaborTypeID);
-                entity.ToTable("ReservationPurchaseOrderInventorys");
+                entity.ToTable("InflowLALTs");
             }
             );
 
@@ -63,7 +63,16 @@ namespace FinalProject.Data
                 entity.HasKey(e => new { e.ScheduleID, e.TimeCardID });
                 entity.HasOne(d => d.WorkSchedule).WithMany(p => p.FulfillmentWSLAs).HasForeignKey(d => d.ScheduleID);
                 entity.HasOne(d => d.LaborAcquisition).WithMany(p => p.FulfillmentWSLAs).HasForeignKey(d => d.TimeCardID);
-                entity.ToTable("ReservationPurchaseOrderInventorys");
+                entity.ToTable("FulfillmentWSLAs");
+            }
+            );
+
+            builder.Entity<InflowEmployeeWithholding>(entity =>
+            {
+                entity.HasKey(e => new { e.MaritalStatus, e.EmployeeID });
+                entity.HasOne(d => d.Withholding).WithMany(p => p.InflowEmployeeWithholdings).HasForeignKey(d => d.MaritalStatus);
+                entity.HasOne(d => d.Employee).WithMany(p => p.InflowEmployeeWithholdings).HasForeignKey(d => d.EmployeeID);
+                entity.ToTable("InflowEmployeeWithholdings");
             }
             );
         }

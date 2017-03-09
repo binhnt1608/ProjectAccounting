@@ -19,10 +19,10 @@ namespace FinalProject.Models
         public int CDTypeID { get; set; }
 
         //VendorID
+        /*[Display(Name = "Payee #")]
+        public int PayeeID { get; set; }*/
         [Display(Name = "Payee #")]
-        public int PayeeID { get; set; }
-        /*[Display(Name = "Vendor #")]
-        public int VendorID { get; set; }*/
+        public int VendorID { get; set; }
 
         [Display(Name = "Employee #")]
         public int EmployeeID { get; set; }
@@ -33,7 +33,7 @@ namespace FinalProject.Models
 
         //InventoryREceiptID
         [Display(Name = "Event #")]
-        public int EventID { get; set; }
+        public int InventoryREceiptID { get; set; }
 
         //cashdebursement amount
         [Display(Name = "Amount Paid")]

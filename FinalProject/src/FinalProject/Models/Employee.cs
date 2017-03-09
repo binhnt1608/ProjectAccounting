@@ -8,6 +8,10 @@ namespace FinalProject.Models
 {
     public class Employee
     {
+        public Employee()
+        {
+            InflowEmployeeWithholdings = new HashSet<InflowEmployeeWithholding>();
+        }
         [Display(Name = "Employee #")]
         public int EmployeeID { get; set; }
 
@@ -93,6 +97,9 @@ namespace FinalProject.Models
         public virtual ICollection<LoanAgreement> LoanAgreemnet { get; set; }
         public virtual ICollection<CashReceipt> CashReceipt { get; set; }
         public virtual ICollection<StockSubscription> StockSubscription { get; set; }
-        //m-m withholding
+
+        // 1-m Inflow E-W
+        public virtual ICollection<InflowEmployeeWithholding> InflowEmployeeWithholdings{ get; set; }
+
     }
 }

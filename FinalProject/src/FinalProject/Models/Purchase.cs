@@ -10,7 +10,7 @@ namespace FinalProject.Models
     {
         public Purchase ()
         {
-            InflowPurchaseInventorys = new HashSet<InflowPurchaseInventory>();
+            InflowPurchaseInventories = new HashSet<InflowPurchaseInventory>();
         }
 
         [Key]
@@ -43,7 +43,7 @@ namespace FinalProject.Models
         public virtual ICollection<CashDisbursement> CashDisbursement { get; set; }
 
 
-        public virtual ICollection<InflowPurchaseInventory> InflowPurchaseInventorys { get; set; }
+        public virtual ICollection<InflowPurchaseInventory> InflowPurchaseInventories { get; set; }
     }
 
 }
