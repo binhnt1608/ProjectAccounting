@@ -8,6 +8,11 @@ namespace FinalProject.Models
 {
     public class Withholding
     {
+        public Withholding()
+        {
+            InflowEmployeeWithholdings = new HashSet<InflowEmployeeWithholding>();
+        }
+
         [Required]
         [Display(Name ="Marital Status")]
         public string MaritalStatus { get; set; }
@@ -35,6 +40,9 @@ namespace FinalProject.Models
         [Display(Name ="FWT Base Amt")]
         [DisplayFormat(DataFormatString = "{0:$#.##}")]
         public decimal FWTBracketBaseAmt { get; set; }
+
+        // 1 - m Inflow E-W
+        public virtual ICollection<InflowEmployeeWithholding> InflowEmployeeWithholdings { get; set; }
 
     }
 }
