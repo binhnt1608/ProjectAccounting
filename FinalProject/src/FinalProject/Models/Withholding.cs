@@ -41,12 +41,8 @@ namespace FinalProject.Models
         [DisplayFormat(DataFormatString = "{0:$#.##}")]
         public decimal FWTBracketBaseAmt { get; set; }
 
-<<<<<<< HEAD
-        //m-m employee
-=======
         // 1 - m Inflow E-W
         public virtual ICollection<InflowEmployeeWithholding> InflowEmployeeWithholdings { get; set; }
 
->>>>>>> origin/master
     }
 }
